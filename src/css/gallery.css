@@ -1,0 +1,17 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1228px;
+}
+.gallery-image {
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover,
+.gallery-image:focus {
+  transform: scale(1.044);
+}
+.sl-wrapper {
+  background-color: rgba(46, 47, 66, 0.8) !important; /* темніше */
+}

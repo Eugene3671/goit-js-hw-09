@@ -65,17 +65,29 @@ const images = [
 ];
 const galleryEl = document.querySelector('.gallery');
 const markup = images.map(({ preview: smallImg, original: largeImg, description }) => {
-    return`<li class="gallery-item">
-  <a class="gallery-link" href="${largeImg}">
-    <img
-      class="gallery-image"
-      src="${smallImg}"
-      data-source="${largeImg}"
-      alt="${description}"
-      width="360px" height="200px"
-    />
-  </a>
+    return`
+<li class="gallery-item">
+	<a class="gallery-link" href="${largeImg}">
+		<img 
+		  class="gallery-image" 
+		  src="${smallImg}" 
+		  alt="${description}"
+      width="360px" height="200px" 
+		/>
+	</a>
 </li>
 `
 }).join('\n');
 galleryEl.insertAdjacentHTML('beforeend', markup);
+
+// Описаний в документації
+import SimpleLightbox from "simplelightbox";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
+let gallery = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,});
+gallery.on('show.simplelightbox', function () {
+	
+});
